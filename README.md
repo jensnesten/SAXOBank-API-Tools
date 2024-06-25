@@ -3,7 +3,7 @@
 ##fetchprice.py 
 Depending on the time horizon set, there are different limits to how much price data you can fetch in one request. Specifically for 1 minute data, you only get one day's worth of prices. To handle this limitation, you can loop through each day and month to fetch and aggregate the data incrementally:
 
-´´´python
+´´´{python}
     for month in range(1, 12):
         for day in range(1, 31):
             response = get_historical_prices(headers, assetType=assetType, uic=uic, period=period, day=day, month=month)
