@@ -1,11 +1,6 @@
 # SaxoOpenAPI Tools
 
 ## fetchprice.py 
-
-Depending on the time horizon set, there are different limits to how much price data you can fetch in 
-one request. Specifically for 1 minute data, you only get one day's worth of prices. To handle this 
-limitation, you can loop through each day and month to fetch and aggregate the data incrementally:
-
 Depending on the time horizon set, there are different limits to how much price data you can fetch in one request. Specifically for 1 minute data, you only get one day's worth of prices. To handle this limitation, you can loop through each day and month to fetch and aggregate the data incrementally:
 ```python
     for month in range(1, 12):
@@ -29,7 +24,7 @@ Depending on the time horizon set, there are different limits to how much price 
             df = pd.concat([df, new_data])
         df.to_csv("prices.csv", index=False)
 ```
-An error will still be thrown for monthly ranges higher than 4, and from January to March due to February only being 28 days. 
+An error will still be thrown for monthly ranges higher than 4, and from January to March due to February only being 28 days. But 3 requests instead of 365 is still pretty good.
 
 ## infoGUI.py
 
