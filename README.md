@@ -29,16 +29,13 @@ Depending on the time horizon set, there are different limits to how much price 
             df = pd.concat([df, new_data])
         df.to_csv("prices.csv", index=False)
 ```
-An error will still be thrown for monthly ranges higher than 4, and from January to March due to 
-February only being 28 days. 
-
-            new_data = pd.DataFrame({"Date": time_values, "Open": open_ask_values, "High": high_ask_values, "Low": low_ask_values, "Close": close_ask_values})
-            df = pd.concat([df, new_data])
-        df.to_csv("prices.csv", index=False)
-```
 An error will still be thrown for monthly ranges higher than 4, and from January to March due to February only being 28 days. 
-
 
 ## infoGUI.py
 
-The UIC for each available asset can be fetched by running infoGUI, and selecting the desired asset type.
+The UIC of each available asset can be fetched by running infoGUI.py, and choosing the desired asset type. 
+<img width="1017" alt="pic" src="https://github.com/jensnesten/SaxoOpenAPI-Tools/assets/42718681/15e21390-4cf2-4c62-85a4-c91e0c9228be">
+
+## getPriceChart.py
+
+When you have the UIC, you can chart the price data by running getPriceChart. The charting is done using the python version of the lightweight-charts framework.
