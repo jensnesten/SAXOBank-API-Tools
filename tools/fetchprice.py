@@ -36,7 +36,7 @@ def main():
             #Then we make a pandas datafram with the data, into a csv file
             new_data = pd.DataFrame({"Date": time_values, "Open": open_ask_values, "High": high_ask_values, "Low": low_ask_values, "Close": close_ask_values})
             df = pd.concat([df, new_data])
-        print(response)
+        df.to_csv("prices.csv", index=False)
         
 
 
